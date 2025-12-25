@@ -1,0 +1,43 @@
+# ===============================
+# Build results
+# ===============================
+bin/
+obj/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa]rchive/
+[Oo]ut/
+
+# ===============================
+# Visual Studio
+# ===============================
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ===============================
+# NuGet
+# ===============================
+**/[Pp]ackages/*
+*.nupkg
+*.snupkg
+artifacts/
+
+# ===============================
+# Logs & OS
+# ===============================
+*.log
+[Dd]esktop.ini
+Thumbs.db
+
+
+
+
+
