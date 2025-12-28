@@ -38,7 +38,7 @@ namespace BookManagement.API
                 .AddHistoryModule(builder.Configuration);
 
             // Event bus (shared)
-            builder.Services.AddSingleton<IEventBus, InMemoryEventBus>();
+            builder.Services.AddScoped<IEventBus, InMemoryEventBus>();
 
             var app = builder.Build();
 

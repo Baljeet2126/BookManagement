@@ -128,13 +128,13 @@ public sealed class BookService : IBookService
         await _repository.DeleteAsync(book);
         await _repository.SaveChangesAsync(ct);
 
-        //await _eventBus.PublishAsync(new BookDeletedEvent(book.Id), ct);
+        await _eventBus.PublishAsync(new BookDeletedEvent(book.Id, book.Title), ct);
 
         _logger.LogInformation("Deleted book {BookId}", id);
         return true;
     }
 
-    private static BookResponseModel MapToResponseModel(BookManagement.API.Modules.Books.Domain.Entities.Book book) => new()
+    private static BookResponseModel MapToResponseModel(Book book) => new()
     {
         Id = book.Id,
         Title = book.Title,

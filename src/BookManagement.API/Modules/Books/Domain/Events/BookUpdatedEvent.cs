@@ -5,8 +5,8 @@ namespace BookManagement.API.Modules.Books.Domain.Events
 {
     public sealed record BookUpdatedEvent
     (
-    BookSnapshot Old,
-    BookSnapshot New
+        BookSnapshot Old,
+        BookSnapshot New
 ) : EventBase
     { }
 }

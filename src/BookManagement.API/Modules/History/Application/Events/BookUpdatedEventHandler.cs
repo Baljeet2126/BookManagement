@@ -1,10 +1,11 @@
 ﻿using BookManagement.API.Modules.Books.Domain.Events;
 using BookManagement.API.Modules.History.Application.Interfaces;
 using BookManagement.API.Modules.History.Domain.Entities;
+using BookManagement.API.Shared.Events;
 
 namespace BookManagement.API.Modules.History.Application.Events
 {
-    public sealed class BookUpdatedEventHandler
+    public sealed class BookUpdatedEventHandler : IEventHandler<BookUpdatedEvent>
     {
         private readonly IBookHistoryRepository _repository;
 

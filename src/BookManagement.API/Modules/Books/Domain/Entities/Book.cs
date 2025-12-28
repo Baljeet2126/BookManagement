@@ -1,4 +1,6 @@
-﻿namespace BookManagement.API.Modules.Books.Domain.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BookManagement.API.Modules.Books.Domain.Entities
 {
     public class Book
     {
@@ -11,6 +13,7 @@
             Authors = authors ?? throw new ArgumentNullException(nameof(authors));
         }
         public Guid Id { get; set; }
+
         public string Title { get; set; }
 
         public string? ShortDescription { get; set; }

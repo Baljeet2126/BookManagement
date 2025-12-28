@@ -23,7 +23,6 @@
     <Folder Include="Database\" />
     <Folder Include="Modules\History\Domain\Events\" />
     <Folder Include="Modules\History\Infrastructure\Migrations\" />
-    <Folder Include="Shared\NewFolder\" />
   </ItemGroup>
 
 </Project>

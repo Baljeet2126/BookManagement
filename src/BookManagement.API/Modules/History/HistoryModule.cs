@@ -1,7 +1,10 @@
-﻿using BookManagement.API.Modules.History.Application.Interfaces;
+﻿using BookManagement.API.Modules.Books.Domain.Events;
+using BookManagement.API.Modules.History.Application.Events;
+using BookManagement.API.Modules.History.Application.Interfaces;
 using BookManagement.API.Modules.History.Application.Services;
 using BookManagement.API.Modules.History.Infrastructure.DataContext;
 using BookManagement.API.Modules.History.Infrastructure.Repositories;
+using BookManagement.API.Shared.Events;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -26,6 +29,11 @@ namespace BookManagement.API.Modules.History
 
             // Application services
             services.AddScoped<HistoryService>();
+
+            services.AddScoped<IEventHandler<BookCreatedEvent>, BookCreatedEventHandler>();
+            services.AddScoped<IEventHandler<BookUpdatedEvent>, BookUpdatedEventHandler>();
+            services.AddScoped<IEventHandler<BookDeletedEvent>, BookDeletedEventHandler>();
+
 
             return services;
         }

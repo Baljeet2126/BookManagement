@@ -13,21 +13,10 @@ namespace BookManagement.API.Modules.Books.Infrastructure.Extensions
                 query = query.Where(b => b.BookTitle.Contains(historyQuery.Title));
 
             if (!string.IsNullOrWhiteSpace(historyQuery.Action))
-                query = query.Where(b => b.Authors.Contains(historyQuery.Action));
+                query = query.Where(b => b.Action.ToLower() == historyQuery.Action);
 
             return query;
         }
-
-        //public static IQueryable<BookHistory> ApplySorting(this IQueryable<BookHistory> query, HistoryQuery historyQuery)
-        //{
-        //    return historyQuery.SortBy switch
-        //    {
-        //        "title" => historyQuery.SortDirection == "desc"
-        //            ? query.OrderByDescending(b => b.BookTitle)
-        //            : query.OrderBy(b => b.BookTitle),
-        //        _ => query.OrderBy(b => b.Id)
-        //    };
-        //}
 
         public static async Task<PagedResult<BookHistory>> ApplyPagingAsync(
         this IQueryable<BookHistory> query,

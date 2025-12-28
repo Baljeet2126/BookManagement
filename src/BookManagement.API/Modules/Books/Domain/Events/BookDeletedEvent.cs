@@ -2,5 +2,9 @@
 
 namespace BookManagement.API.Modules.Books.Domain.Events
 {
-    public sealed record BookDeletedEvent(Guid BookId, String Title) : EventBase;
+    public sealed record BookDeletedEvent(Guid BookId, string Title)
+        : EventBase
+    {
+       
+    };
 }

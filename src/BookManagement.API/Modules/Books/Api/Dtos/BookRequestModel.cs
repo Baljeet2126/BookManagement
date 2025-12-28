@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BookManagement.API.Shared.Validations;
+using System.ComponentModel.DataAnnotations;
 
 namespace BookManagement.API.Modules.Books.Api.Dtos
 {
@@ -14,8 +15,7 @@ namespace BookManagement.API.Modules.Books.Api.Dtos
         [Required(ErrorMessage = "Publish Date is required")]
         public DateTime PublishDate { get; init; }
 
-        [Required(ErrorMessage = "Authors is required")]
-        [MinLength(1, ErrorMessage = "At least one author is required")]
+        [HasNonEmptyStrings]
         public List<string> Authors { get; init; } = [];
     }
 
